@@ -5,12 +5,12 @@
 class ShellAi < Formula
   desc ""
   homepage "https://github.com/ibigio/shell-ai"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.1/shell-ai_Darwin_x86_64.tar.gz"
-      sha256 "c219882cc6f82d29c11a008f82194c818f4554dd04b1e689b0a5592ba6cf9af6"
+      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.2/shell-ai_Darwin_x86_64.tar.gz"
+      sha256 "5870b5494ae755880718518e810f182cb1729f7573faf1c395cdb7f3cb9458bd"
 
       def install
         bin.install "shell-ai"
@@ -18,8 +18,8 @@ class ShellAi < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.1/shell-ai_Darwin_arm64.tar.gz"
-      sha256 "c6d9ebfeb45eedd3e0d293bc1aae7a41a86ed37e7816aa64b7fe988cd3b69701"
+      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.2/shell-ai_Darwin_arm64.tar.gz"
+      sha256 "b15610a00a223fe25365318e721adaae14935bb4b1ad2f3f14464ab2bb3e3b3f"
 
       def install
         bin.install "shell-ai"
@@ -29,18 +29,18 @@ class ShellAi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.1/shell-ai_Linux_arm64.tar.gz"
-      sha256 "bf5145c5bac78a8037be2f896bcb53a8cfd08f97c51b162b479b37c013851933"
+    if Hardware::CPU.intel?
+      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.2/shell-ai_Linux_x86_64.tar.gz"
+      sha256 "df4e71b764fc967bad6f6d1ea7fb45a9240dfe6214f4348c3fbf9d5d78c2aa8b"
 
       def install
         bin.install "shell-ai"
         bin.install_symlink "shell-ai" => "q"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.1/shell-ai_Linux_x86_64.tar.gz"
-      sha256 "f36e96207b903449bf571098af34a4d7dacd0f38e6376c0c9ecc4484c63d9632"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ibigio/shell-ai/releases/download/v0.2.2/shell-ai_Linux_arm64.tar.gz"
+      sha256 "4ac0d1deca331277ba1d6c304650b910846ab9091e05b3eb24d1b5b5cbb93aff"
 
       def install
         bin.install "shell-ai"
